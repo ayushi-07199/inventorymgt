@@ -1,5 +1,8 @@
 package com.dxctraining.ui;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.PostConstruct; 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +10,8 @@ import org.springframework.stereotype.Component;
 
 import com.dxctraining.computer.entities.Computer;
 import com.dxctraining.computer.services.IComputerService;
+
+import com.dxctraining.exceptions.InvalidArgumentException;
 import com.dxctraining.item.entities.Item;
 import com.dxctraining.item.services.IItemService;
 import com.dxctraining.phone.entities.Phone;
@@ -55,7 +60,20 @@ public class ItemUi {
 		
 
 		int id1 = item3.getId();
+		int id2 = supplier3.getId();
 		Item itemFetched1 = itemService.findItemById(id1);
-		System.out.println("id is" + itemFetched1.getId() + "name is" + itemFetched1.getName());
+	
+		Supplier supplierFecthed1=supplierService.findSupplierById(id2);
+		System.out.println("id is" + itemFetched1.getId() + "name is" + itemFetched1.getName() + "id supp"+ supplierFecthed1.getId()
+		+"supp name" +supplierFecthed1.getName());
+	     
+		
+	
+	
 	}
+	
+	
 }
+	
+	
+	
